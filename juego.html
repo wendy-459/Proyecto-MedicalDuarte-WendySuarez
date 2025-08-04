@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego de Derechos y Deberes</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="juego-container">
+    <h1>Aprende tus Derechos y Deberes</h1>
+    <div id="pregunta-container">
+      <img src="assets/juego/lovepik-question-expression-package-png-image_401402569_wh1200.png" alt="Icono de pregunta" style="width: 100px; height: 100px; display: block; margin: 0 auto 20px auto;">
+      <p id="texto-pregunta"></p>
+      <div id="opciones"></div>
+      <div id="feedback-message"></div> </div>
+    <audio id="audio-pregunta" controls style="display:none;"></audio>
+    <button onclick="siguientePregunta()">Siguiente</button>
+  </div>
+  <script src="js/juego.js"></script>
+</body>
+</html>

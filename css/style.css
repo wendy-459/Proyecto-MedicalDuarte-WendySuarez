@@ -1,0 +1,263 @@
+body {
+  font-family: 'Roboto', sans-serif; /* Fuente consistente y moderna */
+  background: linear-gradient(to bottom right, #e0f2f7, #c6e2ff); /* Fondo degradado suave */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Usar flexbox para centrar contenido */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+  box-sizing: border-box; /* Incluye padding y border en el tamaño total del elemento */
+}
+
+/* Contenedores principales (login, guía, admin, juego) */
+.login-container, .guia-container, .admin-container, .juego-container {
+  background: white;
+  max-width: 550px; /* Un poco más ancho para mejor visualización en escritorio */
+  width: 90%; /* Ocupa el 90% del ancho disponible */
+  margin: 40px auto;
+  padding: 35px; /* Relleno aumentado */
+  border-radius: 18px; /* Esquinas más suavemente redondeadas */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15); /* Sombra más pronunciada */
+  text-align: center;
+  box-sizing: border-box; /* Incluye padding y border en el tamaño total del elemento */
+}
+
+/* Logo general (usado en login, puede ser reutilizado) */
+.logo {
+  width: 280px; /* Tamaño ajustado */
+  height: auto; /* Mantiene la relación de aspecto */
+  display: block;
+  margin: 0 auto 25px auto;
+}
+
+/* Logo específico para la guía/juego si es diferente o necesitas otro tamaño */
+.guia-logo {
+    width: 200px; /* Ajusta el tamaño según tu logo */
+    height: auto;
+    margin: 30px auto 20px auto; /* Centra el logo y añade espacio */
+    display: block;
+}
+
+h1, h2 {
+  color: #0056b3; /* Azul más oscuro para los encabezados */
+  margin-bottom: 20px;
+  font-size: 2em; /* Tamaño de fuente adaptable */
+}
+
+input, select {
+  width: calc(100% - 20px); /* Considera el padding */
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px; /* Ligeramente menos redondeado para inputs */
+  border: 1px solid #cce7ff; /* Borde sutil y claro */
+  box-sizing: border-box; /* Incluye el padding en el ancho */
+  font-size: 1em; /* Tamaño de fuente adaptable */
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0 5px 0;
+  border-radius: 8px;
+  border: none;
+  background-color: #007bff; /* Azul primario para acciones */
+  color: white;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+}
+
+button:hover {
+  background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+  transform: translateY(-2px); /* Efecto de elevación ligera */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Sombra para la tabla */
+}
+
+th, td {
+  border: 1px solid #e0e0e0; /* Bordes de tabla más claros */
+  padding: 10px 15px;
+  text-align: left; /* Alinea el texto a la izquierda para mejor lectura */
+  font-size: 0.95em; /* Tamaño de fuente adaptable */
+}
+
+th {
+  background-color: #f2f2f2; /* Fondo claro para los encabezados de tabla */
+  color: #333;
+  font-weight: bold;
+}
+
+/* Estilos específicos para el juego */
+.juego-container #pregunta-container {
+  background-color: #e9f5ff;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+.juego-container #texto-pregunta {
+  font-size: 1.4em;
+  color: #333;
+  margin-bottom: 20px;
+  min-height: 60px; /* Asegura una altura consistente para la pregunta */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.juego-container #opciones button.opcion {
+  background-color: #6c757d; /* Gris apagado para las opciones */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 8px 0;
+  border-radius: 8px;
+  font-size: 1.1em;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.juego-container #opciones button.opcion:hover {
+  background-color: #5a6268; /* Gris más oscuro al pasar el ratón */
+  transform: none; /* Sin elevación en las opciones */
+}
+
+/* Mensaje de retroalimentación para el juego */
+#feedback-message {
+  margin-top: 15px;
+  font-size: 1.2em;
+  font-weight: bold;
+  min-height: 30px; /* Reserva espacio */
+}
+
+.feedback-correct {
+  color: #28a745; /* Verde para correcto */
+}
+
+.feedback-incorrect {
+  color: #dc3545; /* Rojo para incorrecto */
+}
+
+/* Estilos para la guía (guia.html) */
+.guia-container h1 {
+  font-size: 2.2em;
+}
+.guia-container .seccion {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid #e0e0e0;
+}
+.guia-container .seccion h2 {
+  font-size: 1.8em;
+}
+.guia-container .seccion ul li {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+.guia-container .seccion ul li::before {
+  content: "✔️ ";
+  color: #28a745;
+  font-weight: bold;
+  margin-right: 8px;
+}
+.boton-juego {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  display: block;
+  margin: 30px auto 0 auto;
+}
+
+/* MEDIA QUERIES para responsividad */
+
+/* Para pantallas más pequeñas (teléfonos) */
+@media (max-width: 768px) {
+  .login-container, .guia-container, .admin-container, .juego-container {
+    padding: 20px; /* Menos padding en pantallas pequeñas */
+    margin: 20px auto; /* Menos margen vertical */
+    max-width: 95%; /* Ocupa casi todo el ancho */
+  }
+
+  .logo, .guia-logo {
+    width: 180px; /* Tamaño del logo más pequeño */
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    font-size: 1.8em; /* Títulos un poco más pequeños */
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  input, select, button {
+    font-size: 1em; /* Ajusta el tamaño de fuente para inputs y botones */
+    padding: 10px;
+  }
+
+  th, td {
+    padding: 8px 10px; /* Menos padding en celdas de tabla */
+    font-size: 0.85em; /* Texto de tabla más pequeño */
+  }
+
+  .juego-container #texto-pregunta {
+    font-size: 1.2em; /* Pregunta más pequeña */
+    min-height: 50px;
+  }
+
+  .juego-container #opciones button.opcion {
+    font-size: 1em; /* Opciones más pequeñas */
+    padding: 8px 15px;
+  }
+
+  #feedback-message {
+    font-size: 1em; /* Mensaje de retroalimentación más pequeño */
+  }
+
+  .guia-container h1 {
+    font-size: 1.8em;
+  }
+  .guia-container .seccion h2 {
+    font-size: 1.5em;
+  }
+  .guia-container .seccion ul li {
+    font-size: 1em;
+  }
+  .boton-juego {
+    padding: 12px 20px;
+    font-size: 1.1em;
+  }
+}
+
+/* Para pantallas aún más pequeñas (teléfonos muy pequeños) */
+@media (max-width: 480px) {
+  .login-container, .guia-container, .admin-container, .juego-container {
+    padding: 15px; /* Menos padding */
+    margin: 15px auto;
+  }
+
+  .logo, .guia-logo {
+    width: 150px; /* Logo más pequeño */
+  }
+
+  h1 {
+    font-size: 1.6em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  .juego-container #texto-pregunta {
+    font-size: 1em;
+  }
+}
